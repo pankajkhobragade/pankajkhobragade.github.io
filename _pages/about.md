@@ -8,6 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-My notes taken on spark journey
+My notes taken during my spark journey
 ======
 
