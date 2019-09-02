@@ -8,6 +8,9 @@ redirect_from:
   - /about.html
 ---
 
+
+
+
 “ANYONE WHO STOPS LEARNING IS OLD, WHETHER AT TWENTY OR EIGHTY.” —HENRY FORD
 ===
 I have tried to note down my learning here , I hope anyone reading it finds it usefull.
