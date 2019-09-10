@@ -1,5 +1,5 @@
 ---
-title: 'Loop through the dataframe in sparl'
+title: 'easy way to loop through the dataframe in spark'
 date: 2019-08-14
 permalink: /posts/2019/08/dataframe-loop/
 tags:
