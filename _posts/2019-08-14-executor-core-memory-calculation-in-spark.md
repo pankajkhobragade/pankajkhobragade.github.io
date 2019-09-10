@@ -24,6 +24,13 @@ Core:
 --
 A core is basic computation unit of the processor. CPU may have one or more cores to perform the tasks. The more cores that means more tasks can be run in prarallel.
 
+Steps involved in cluster mode for a Spark Job:
+---
+* From the driver code, SparkContext connects to cluster manager (standalone/Mesos/YARN).
+* Cluster Manager allocates resources across the other applications. Any cluster manager can be used as long as the executor processes are running and they communicate with each other.
+* Spark acquires executors on nodes in cluster. Here each application will get its own executor processes.
+* Application code (jar/python files/python egg files) is sent to executors
+* Tasks are sent by SparkContext to the executors.
 ![spark-job](/images/spark-job.png)
  
 
