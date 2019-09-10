@@ -12,7 +12,7 @@ How spark job runs?
 ======
 Before we jump on the calculation of executors, cores and memory reqired for the spark job, lets look at the some of the basics of spark job.
 
-(/images/spark-job.png)
+![spark-job](/images/spark-job.png)
  
 
 How to calculate executors and memory
