@@ -70,7 +70,7 @@ clustor details :
 * Ram on each node = 128 GB
 
 So our param values calculation is like below :
-executor-cores= 5
-num-executors = {(32 * 10)/ 5}-1 = 63
-executor-memory = {(64 -1 )/(63/10)} * 0.93 it comes to nearly 9 GB
+* executor-cores= 5
+* num-executors = {(32 * 10)/ 5}-1 = 63
+* executor-memory = {(64 -1 )/(63/10)} * 0.93 it comes to nearly 9 GB
 
