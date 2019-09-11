@@ -34,8 +34,42 @@ Steps involved in cluster mode for a Spark Job:
 ![spark-job](/images/spark-job.png)
  
 
-How to calculate executors and memory
+How to calculate executors and memory :
 ======
+No of cores ( --executor-cores):
+---
+No of cores assigned for any executors,means that executor can run that many tasks in parallel.
+Through the research its been found that any application with more than 5 concurrent tasks leads to bad performance.
+So we would take cores to 5 for the calculations.
+So it gives us executor-cores = 5.
 
-Aren't headings cool?
-------
+No of Executors (--num-executors):
+---
+Available executors = ( total cores of a node) * (no of nodes in cluster) / (5 /*--core from above calculation*/)
+no of exectors for job = Available executors - 1
+
+We are reducing one from total available executors bevause we need one executor dedicated to yarn job demon running in the clustor.
+So it gives us num-executors = {( total cores of a node) * (no of nodes in cluster) / (5 /*--core from above calculation*/)} - 1
+
+executor-memory :
+---
+total executor memory = (node memory - 1 GB) /(executors per node)
+                = (node memory - 1 GB) /(num-executors /(no of nodes))
+
+We need to also consider the garbage collection, memory overhead. So 0.07 of memory should be kept for it with that the formula becomes like below. And 1 GB is kept for the hadoop demons running in the node.
+
+executor-memory = total executor memory - (0.07 * (total executor memory))
+
+Example :
+====
+clustor details :
+
+* Total nodes - 10
+* Cores on each node = 32
+* Ram on each node = 128 GB
+
+So our param values calculation is like below :
+executor-cores= 5
+num-executors = {(32 * 10)/ 5}-1 = 63
+executor-memory = {(64 -1 )/(63/10)} * 0.93 it comes to nearly 9 GB
+
