@@ -36,8 +36,9 @@ Steps involved in cluster mode for a Spark Job:
 
 How to calculate executors and memory :
 ======
+
 No of cores ( --executor-cores):
----
+----
 No of cores assigned for any executors,means that executor can run that many tasks in parallel.
 Through the research its been found that any application with more than 5 concurrent tasks leads to bad performance.
 So we would take cores to 5 for the calculations.
