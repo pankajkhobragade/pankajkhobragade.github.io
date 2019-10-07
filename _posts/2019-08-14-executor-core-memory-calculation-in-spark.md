@@ -46,11 +46,11 @@ So it gives us executor-cores = 5.
 
 No of Executors (--num-executors):
 ---
-Available executors = ( total cores of a node) * (no of nodes in cluster) / (5 /*--core from above calculation*/)
+Available executors = ( total cores of a node) * (no of nodes in cluster) / (5 ---core from above calculation)
 no of exectors for job = Available executors - 1
 
 We are reducing one from total available executors bevause we need one executor dedicated to yarn job demon running in the clustor.
-So it gives us num-executors = {( total cores of a node) * (no of nodes in cluster) / (5 /*--core from above calculation*/)} - 1
+So it gives us num-executors = {( total cores of a node) * (no of nodes in cluster) / (5 ---core from above calculation)} - 1
 
 executor-memory :
 ---
@@ -72,5 +72,5 @@ clustor details :
 So our param values calculation is like below :
 * executor-cores= 5
 * num-executors = {(32 * 10)/ 5}-1 = 63
-* executor-memory = {(64 -1 )/(63/10)} * 0.93 it comes to nearly 9 GB
+* executor-memory = {(128 -1 )/(63/10)} * 0.93 it comes to nearly 19 GB
 
